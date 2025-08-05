@@ -1,7 +1,6 @@
-FROM alpine:latest
-
-# Cài đặt công cụ cần thiết để build microsocks
-RUN apk add --no-cache build-base git
+FROM alpine
+RUN apk add --no-cache microsocks
+CMD microsocks -1 -i 0.0.0.0 -p 1080
 
 # Clone mã nguồn microsocks
 RUN git clone https://github.com/rofl0r/microsocks.git /opt/microsocks
